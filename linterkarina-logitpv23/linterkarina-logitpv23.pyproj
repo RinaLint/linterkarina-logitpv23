@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>2475f6dc-b136-43de-b438-bfbc6468484f</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>linterkarina_logitpv23.py</StartupFile>
+    <StartupFile>listid-2.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>

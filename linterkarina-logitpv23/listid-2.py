@@ -1,3 +1,19 @@
+from string import *
+from random import *
+#6 Бесполезные числа
+list_=[]
+m=randint(1,30)
+for i in range (m):
+    list_.insert(i,randint(1,1000))
+max_=max(list_)
+len_=len(list_)
+print(max_, ",", len_)
+
+
+
+
+
+
 #4 Postiindex
 from string import *
 from random import *
