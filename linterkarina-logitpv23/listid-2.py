@@ -5,9 +5,13 @@ list_=[]
 m=randint(1,30)
 for i in range (m):
     list_.insert(i,randint(1,1000))
+print(list_)
 max_=max(list_)
-len_=len(list_)
-print(max_, ",", len_)
+print("maksimum:", max_, ", kokku:", m)
+arv=max_//m
+indeks=list_.index(max_)
+list_[indeks]=arv
+print(list_)
 
 
 
