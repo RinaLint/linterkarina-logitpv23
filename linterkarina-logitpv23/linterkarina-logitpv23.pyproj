@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>2475f6dc-b136-43de-b438-bfbc6468484f</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>listid-2.py</StartupFile>
+    <StartupFile>mäng.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -23,6 +23,7 @@
   <ItemGroup>
     <Compile Include="linterkarina_logitpv23.py" />
     <Compile Include="listid-2.py" />
+    <Compile Include="mäng.py" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
