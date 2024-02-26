@@ -1,26 +1,27 @@
-from random import *
+import random
 
-valikud=["Kivi","Paber",Käärid"]
-kasutaja1=0
-kasutaja2=0
-while True:
-    kasutaja1=random.choice(valikud)
-    kasutaja2=input("Valige: Kivi, Paber või Käärid ").capitalize()
+valikud=["Kivi","Paber","Käärid"]
+skoor_bot=0
+skoor_kasutaja=0
+while True: #See on lõpmatu tsükkel, mis jätkub seni, kuni tsüklist väljumise tingimus on täidetud.
+    bot=random.choice(valikud) #Funktsioon valib loendist juhusliku elemendi "Kivi", "Paber" või "Käärid"
+    kasutaja=input("Valige: Kivi, Paber või Käärid ").capitalize()  # funktsioon palub kasutajal sisestada ja teisendab selle suurtähtedeks
     if kasutaja not in valikud:
         print("Vale valik")
-        break
-    print(f"Teie valik: {"kasutaja2"}
-    print(f"Kasutaja1 valik: {"kasutaja1"}
-    if kasutaja2==kasutaja1:
-       print("Viik")
-    elif (kasutaja2=="Kivi" and kasutaja1=="Käärid") or (kasutaja2=="Kärid" and kasutaja1=="Paber") or (kasutaja2=="Paber" and kasutaja1=="Kivi"):
-       print("Te võitsite")
-       skoor_kasutaja2+=1
-    else:
-       print("kautaja1 võitis")
-       skoor_kasutaja1+=1
+        break #See funktsioon katkestab tsükli täitmise ja liigub tsükli järel järgmise käsu juurde.
 
-    print(f"Teie skoor: {skoor_kasutaja2} and kasutaja1 skoor: {skoor_kasutaja1}")
-    kordus=input("Kas soovite veel mängida? (jah/ei): ").lower()
+    print(f"Teie valik: {kasutaja}")
+    print(f"bot valik: {bot}")
+    if kasutaja==bot:
+       print("Viik")
+    elif (kasutaja=="Kivi" and bot=="Käärid") or (kasutaja=="Kärid" and bot=="Paber") or (kasutaja=="Paber" and bot=="Kivi"):
+       print("Te võitsite")
+       skoor_kasutaja+=1  #On operaator, mis suurendab muutuja väärtust etteantud arvu võrra.
+    else:
+       print("bot võitis")
+       skoor_bot+=1
+
+    print(f"Teie skoor: {skoor_kasutaja} and bot skoor: {skoor_bot}")
+    kordus=input("Kas soovite veel mängida? (jah/ei): ").lower()  #See funktsioon teisendab stringi väiketähtedeks.
     if kordus!="jah":
         break
