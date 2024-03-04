@@ -1,0 +1,76 @@
+в модуле:
+#1
+def arithmetic(arv1:float, arv2:float, sumb:str)->any:
+    """Funktsion tagastab aritmeetiliste tehtede tulemused,
+    + - liitumine
+    - - lahutamine
+    * - korrutamine
+    / - jagamine
+    :param float arv1: ujukomaarv mis sisestab kasutaja
+    :param float arv2: ujukomaarv mis sisestab kasutaja
+    :param str sumb: sõne/tehe, mis sisestab kasutaja
+    """
+    if sumb=="+":
+        vastus=arv1+arv2
+    elif sumb=="-":
+        vastus=arv1-arv2
+    elif sumb=="*":
+        vastus=arv1*arv2
+    elif sumb=="/":
+        if arv2==0:
+            vastus="DIV/0"
+        else:
+            vastus=arv1/arv2
+    else:
+        vastus="tundmatu operatsioon"
+    return vastus
+
+#2
+def is_year_leap(aasta:int)-> bool:
+    """Funktsioon tagastab True, kui aasta on liigaasta, või False Kui aasta on tavaline
+   
+    :param int aasta: Kasutaja sisestab aasta number
+    :rtype: bool
+    """
+    if aasta%4==0:
+        vastus=true
+    else:
+        vastus=FALSE
+    return vastus
+В ФУНКЦИОН:
+from Module import *
+from random import *
+
+#2
+vastus= is_year_leap(int(input("Aasta:")))
+if vastus:
+    print("Liigaasta")
+else:
+    print("TAvaline aasta")
+
+
+
+a=[]
+b=[]
+#(1) arithmetic()
+v=arithmetic(float(input("Arv1: ")), float(input("Arv2: ")),input("Operatsion: "))
+print(v)
+
+for i in range(5):
+    a.append(randint(-20, 20))
+for i in range(1, 4):
+    arv=int(input(f"{i}. arv"))
+    b.append(arv)
+print(a)
+print(b)
+print()
+Suurim_element(a, b)
+
+
+a=randint(-10, 10)
+print("Esimene arv=", a)
+b=float(input("Teine arv:"))
+kor=Korrutis(a,b,5.5)
+print("Tulemus: ", kor)
+kor=Korrutis(b,a,b,10)
+print(f"Tulemus: {b}*{a}*{b}*10=", kor)
