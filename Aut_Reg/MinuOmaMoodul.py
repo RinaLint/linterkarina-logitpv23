@@ -91,4 +91,3 @@ def unustanud_parooli_taastamine(kasutajad:list,paroolid:list):
         print("Sellise kasutajanimega kasutajat ei leitud.")
 
     return kasutajad, paroolid
-
