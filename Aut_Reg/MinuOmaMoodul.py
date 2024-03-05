@@ -2,7 +2,7 @@ from string import *
 from time import sleep
 def registreerimine(kasutajad:list,paroolid:list)->any:
     """Funktsioon tagastab kasutajad ja paroolid listid:
-    :param list kasutajad: Sisestage tähted
+    :param list kasutajad: Sisestage tähed
     :param list paroolid: Sisestage numbrid
     :rtype: list,list
     """
@@ -47,17 +47,48 @@ def autoriseerimine(kasutajad:list,paroolid:list):
     p=0
     while True:
         nimi=input("Sisesta kasutajanimi: ")
-        parool=input("Sisesta salasõna: ")
-        p+=1
-        if kasutajad.index(nimi)==paroolid.index(parool):
-            print(f"Tere tulemast! {nimi}")
-            break
-        else:
-            print("Vale nimi või salasõna!")
-            if p==5:
-                print("Proovi uuesti 10 sek pärast")
-                for i in range(10):
-                    sleep(1)
-                    print(f"On jänud {10-i} sek")
+        if nimi in kasutajad:
+            while True:
+                parool=input("Sisesta salasõna: ")
+                p+=1
+                try:
+                    if kasutajad.index(nimi)==paroolid.index(parool):
+                        print(f"Tere tulemast! {nimi}")
+                        break
+                except:
+                        print("Vale nimi või salasõna!")
+                        if p==5:
+                            print("Proovi uuesti 10 sek pärast")
+                            for i in range(10):
+                                sleep(1)
+                                print(f"On jänud {10-i} sek")
         else:
             print("Kasutajat pole")
+        break
+def nimi_või_parooli_muutmine(list_:list):
+    """Funktsioon muudab kasutajanime või parooli
+    """
+
+    muutuja=input("Vana nimi või parool: ")
+    if muutuja in list_:
+        indeks=list_.index(muutuja)
+        muutuja=input("Uus nimi või parool: ")
+        list_[indeks]=muutuja
+        return list
+def unustanud_parooli_taastamine(kasutajad:list,paroolid:list):
+    """Funktsioon aitab kasutajal unustatud parooli taastada."""
+    nimi=input("Sisesta kasutajanimi, mille parooli soovid taastada: ")
+    if nimi in kasutajad:
+        indeks=kasutajad.index(nimi)
+        vastus=input(f"Kas soovid taastada parooli kasutajale '{nimi}'? (jah/ei): ")
+        if vastus.lower()=="jah":
+            uus_parool=input("Sisesta uus parool: ")
+            paroolid[indeks]=uus_parool
+            print("Parool on edukalt taastatud!")
+        else:
+            print("Parooli taastamine tühistatud.")
+    else:
+        print("Sellise kasutajanimega kasutajat ei leitud.")
+
+    return kasutajad, paroolid
+
