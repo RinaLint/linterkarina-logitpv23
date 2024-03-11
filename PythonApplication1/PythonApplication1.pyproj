@@ -2,15 +2,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>150116af-e6ae-4635-b427-fa6a57dc08a5</ProjectGuid>
+    <ProjectGuid>15c9b9c2-0740-4120-b76d-4207ae3cce72</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Aut_Reg.py</StartupFile>
+    <StartupFile>PythonApplication1.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
-    <Name>Aut_Reg</Name>
-    <RootNamespace>Aut_Reg</RootNamespace>
+    <Name>PythonApplication1</Name>
+    <RootNamespace>PythonApplication1</RootNamespace>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -21,15 +21,7 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Aut_Reg.py" />
-    <Compile Include="MinuOmaMoodul.py" />
-    <Compile Include="Töö_failidega.py" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Päevad.txt" />
-    <Content Include="Salasõnad.txt" />
-    <Content Include="Kasutajad.txt" />
-    <Content Include="Tekst.txt" />
+    <Compile Include="PythonApplication1.py" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

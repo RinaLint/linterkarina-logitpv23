@@ -1,10 +1,11 @@
 from string import *
 from time import sleep
+from os import path, remove
 def registreerimine(kasutajad:list,paroolid:list)->any:
     """Funktsioon tagastab kasutajad ja paroolid listid:
-    :param list kasutajad: Sisestage tähed
-    :param list paroolid: Sisestage numbrid
-    :rtype: list,list
+    :param list kasutajad:Kasutaja peab sisestama kasutajanime ja see tuleks nimekirja lisada
+    :param list paroolid:Kasutaja peab sisestama parooli ja see parool tuleb nimekirja lisada
+    :rtype:list,list
     """
     while True:
         nimi=input("Mis on sinu nimi? ")
@@ -34,13 +35,13 @@ def registreerimine(kasutajad:list,paroolid:list)->any:
                     print("Nõrk salasõna!")
             break
         else:
-                print("Selline kasutaja on juba olemas!")
+            print("Selline kasutaja on juba olemas!")
     return kasutajad, paroolid
 def autoriseerimine(kasutajad:list,paroolid:list):
-    """Funktsioon kuvab ekraanile "Tere tulemast" kui kasutaja on olemas nimelirjas
-        Nimi on järjendis kasutajad
-        Salasõna on paroolide järjendis
-        Nimi ja salasõna indeksid on võrdsed
+    """Funktsioon kuvab ekraanile "Tere tulemast!" kui kasutaja on olemas nimekirjas
+         Nimi on järjendis kasutajad
+         Salasõna on paroolide järjendis
+         Nimi ja salasõna indeksid on võrdsed
     :param list kasutajad:...
     :param list paroolid:...
     """
@@ -53,41 +54,63 @@ def autoriseerimine(kasutajad:list,paroolid:list):
                 p+=1
                 try:
                     if kasutajad.index(nimi)==paroolid.index(parool):
-                        print(f"Tere tulemast! {nimi}")
+                        print (f"Tere tulemast! {nimi}")
                         break
                 except:
-                        print("Vale nimi või salasõna!")
-                        if p==5:
-                            print("Proovi uuesti 10 sek pärast")
-                            for i in range(10):
-                                sleep(1)
-                                print(f"On jänud {10-i} sek")
+                    print("Vale nimi või salasõna!")
+                    if p==5:
+                        print("Proovi uuesti 10 sek pärast")
+                        for i in range(10):
+                            sleep(1)
+                            print(f"On jäänud {10-i} sek")
         else:
             print("Kasutajat pole")
         break
-def nimi_või_parooli_muutmine(list_:list):
-    """Funktsioon muudab kasutajanime või parooli
+def muutmine(list_:list):
+    """Funktsioon
     """
-
     muutuja=input("Vana nimi või parool: ")
     if muutuja in list_:
         indeks=list_.index(muutuja)
         muutuja=input("Uus nimi või parool: ")
         list_[indeks]=muutuja
-        return list
-def unustanud_parooli_taastamine(kasutajad:list,paroolid:list):
-    """Funktsioon aitab kasutajal unustatud parooli taastada."""
-    nimi=input("Sisesta kasutajanimi, mille parooli soovid taastada: ")
-    if nimi in kasutajad:
-        indeks=kasutajad.index(nimi)
-        vastus=input(f"Kas soovid taastada parooli kasutajale '{nimi}'? (jah/ei): ")
-        if vastus.lower()=="jah":
-            uus_parool=input("Sisesta uus parool: ")
-            paroolid[indeks]=uus_parool
-            print("Parool on edukalt taastatud!")
-        else:
-            print("Parooli taastamine tühistatud.")
+    return list_
+def loe_failist(fail:str)->list:
+    """Funktsioon loeb tekst *.txt failist
+    """
+    f=open(fail,'r',encoding="utf-8")
+    järjend=[]
+    for rida in f:
+        järjend.append(rida.strip())
+    f.close()
+    return järjend
+def kirjuta_failisse(fail:str,järjend=[]):
+    """Salvestame tekst failisse
+    """
+    n=int(input("Mitu: "))
+    for i in range(n):
+        järjend.append(input(f"{i+1}. sõna: "))
+    f=open(fail,'a', encoding="utf-8")
+    for element in järjend:
+        f.write(element+"\n")
+    f.close()
+def ümber_kirjuta_fail(fail:str):
+    """
+    """
+    f=open(fail,'w')
+    text=input("Sisesta tekst:")
+    f.write(text+"\n")
+    f.close()
+def failide_kustutamine():
+    """
+    """
+    failinimi=input("Mis fail tahad emmaldada?")  #path.isdir("Kaust")
+    if path.isfile(failinimi):
+        remove(failinimi)
+        print(f"Fail {failinimi} oli kustutatud")
     else:
-        print("Sellise kasutajanimega kasutajat ei leitud.")
+        print(f"Fail {failinimi} puudub")
 
-    return kasutajad, paroolid
+def taastamine(paroolid:list):
+    """Funktsioon
+    """

@@ -1,0 +1,13 @@
+Esmaspäaev
+Teisipäev
+Kolmapäev
+Neljapäev
+Reede
+Laupäev
+Pühapäev
+Esmaspäev
+Teisipäev
+Laupäev
+Pühapäev
+Laupäev
+
