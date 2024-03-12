@@ -87,17 +87,17 @@ def loe_failist(fail:str)->list:
 def kirjuta_failisse(fail:str,järjend=[]):
     """Salvestame tekst failisse
     """
-    n=int(input("Mitu: "))
-    for i in range(n):
-        järjend.append(input(f"{i+1}. sõna: "))
-    f=open(fail,'a', encoding="utf-8")
+    #n=int(input("Mitu: "))
+    #for i in range(n):
+    #    järjend.append(input(f"{i+1}. sõna: "))
+    f=open(fail,'w', encoding="utf-8")
     for element in järjend:
         f.write(element+"\n")
     f.close()
 def ümber_kirjuta_fail(fail:str):
     """
     """
-    f=open(fail,'w')
+    f=open(fail,'a')
     text=input("Sisesta tekst:")
     f.write(text+"\n")
     f.close()
@@ -111,6 +111,19 @@ def failide_kustutamine():
     else:
         print(f"Fail {failinimi} puudub")
 
-def taastamine(paroolid:list):
-    """Funktsioon
+def unustanud_parooli_taastamine(kasutajad:list,paroolid:list):
+    """Funktsioon aitab kasutajal unustatud parooli taastada.
+   
     """
+    nimi=input("Sisesta kasutajanimi, mille parooli soovid taastada: ")
+    if nimi in kasutajad:
+        indeks=kasutajad.index(nimi)
+        vastus=input(f"Kas soovid taastada parooli kasutajale '{nimi}'? (jah/ei): ")
+        if vastus.lower()=="jah":
+            uus_parool=input("Sisesta uus parool: ")
+            paroolid[indeks]=uus_parool
+            print("Parool on edukalt taastatud!")
+        else:
+            print("Parooli taastamine tühistatud.")
+    else:
+        print("Sellise kasutajanimega kasutajat ei leitud.")

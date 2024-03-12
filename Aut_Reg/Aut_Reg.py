@@ -27,7 +27,7 @@ while True:
             salasõnad=muutmine(salasõnad)
     elif vastus==4:
         print("Unustanud parooli taastamine")
-        kasutajanimed,salasõnad=taastamine(kasutajanimed,salasõnad)
+        kasutajanimed,salasõnad=unustanud_parooli_taastamine(kasutajanimed,salasõnad)
     elif vastus==5:
         print("Lõpetamine")
         break
