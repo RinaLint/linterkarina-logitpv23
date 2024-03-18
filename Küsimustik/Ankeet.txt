@@ -1,2 +1,10 @@
-Esimine nädala päev?:Esmaspäev
-Viimane aasta kuu?:Detsember
+Eesti pealinn?:Tallinn
+Milline monument seisab uppunud laeva auks?:Russalka mälestussammas
+Eesti suvelinn?:Pärnu
+Kuhu on jäänud meteoriidi jälg?:Saaremaal
+Eestlaste loodud suhtlusprogramm?:Skype
+Jõuluküpsised Eestis?:Piparkook
+Endine kontserdimaja Tallinnas?:Gorhall
+Teletorni kõrgus?:Umbes 314 meetrit
+Kus toimub laulu- ja tantsupidu?:Lauluväljakul
+Millal on Eesti iseseisvuspäev?:24. veebruar
