@@ -7,6 +7,7 @@ salasõnad=[]
 while True:
     print("1-Administraatori registreerimine\n2-Kasutaja\n3-Autoriseerimine")
     vastus=int(input("Sisestage arv "))
+
     if vastus==1:
         print("Administraatori registreerimine")
         kasutajanimed,salasõnad=registreerimine(kasutajanimed,salasõnad)
