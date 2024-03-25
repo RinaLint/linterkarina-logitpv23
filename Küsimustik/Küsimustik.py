@@ -1,39 +1,45 @@
 from MinuOmaMoodul import *
-from random import *
 
-file=open("Ankeet.txt", "r",encoding="utf-8")
-kasutajanimed=[]
-salasõnad=[]
+kasutajad=["Rina"]
+paroolid=["Lint.17"]
+kus,vas=loe("Ankeet.txt")
+
 while True:
-    print("1-Administraatori registreerimine\n2-Kasutaja\n3-Autoriseerimine")
+    print("1-soorita test\n2-logi administraatorina sisse\n3-lõpetamine")
     vastus=int(input("Sisestage arv "))
 
     if vastus==1:
-        print("Administraatori registreerimine")
-        kasutajanimed,salasõnad=registreerimine(kasutajanimed,salasõnad)
+        print("Soorita test")
+        osaleja_nimi=input("Palun sisestage oma nimi: ")
+        N=int(input("Mitu küsimust soovid esitada? "))
+        punktid=küsimus_vastus(kus, N)
+        salvesta(osaleja_nimi, punktid, "Oiged.txt", "Valed.txt", N)
+        oiged_fail=open("Oiged.txt",'r',encoding='utf-8')
+        print(oiged_fail.read())
+        oiged_fail.close()
+        valed_fail=open("Valed.txt",'r',encoding='utf-8')
+        print(valed_fail.read())
+        valed_fail.close()
     elif vastus==2:
-        print("Kasutaja")
-        print("Tere tulemast viktoriinile!")
-        nimi=input("Mis on sinu nimi? ")
-        print("Tere", nimi)
-        õigevastus=0
-        for rida in file:
-            N=rida.split(":")
-            print(N[0])
-            katsed=3
-            while katsed>0:
-                sisend=input("Vastus: ").strip()
-                if sisend==N[1].strip():
-                    õigevastus+=1
-                    print("Tubli!")
-                else:
-                    katsed-=1
-                    print("Viga. Teil on",katsed,"katse.")
-            else:
-                print("Enam ktseid pole jäänud. Õige vastus on:",N[1].strip())
-        print("Õigete vastuste arv:",õigevastus)
+        print("Administraator")
+        autoriseerimine(kasutajad,paroolid)
+        uued={}
+        uute_arv=int(input("Mitu uut küsimust soovid lisada? "))
+        for i in range(uute_arv):
+            küsimus=input("Sisestage uus küsimus: ")
+            vastus=input("Sisestage vastus uuele küsimusele: ")
+            uued[küsimus]=vastus
+        lisa(uued,"Ankeet.txt")
     elif vastus==3:
-        autoriseerimine(kasutajanimed,salasõnad)
-        küsimused=loe_ankeet("Ankeet.txt")
-        print(f"Küsimused on: "+str(küsimused[0]),"Vastused on: "+str(küsimused[1]))
-        file.close()
+        print("Lõpetamine")
+        break
+    else:
+        print("Tundmatu valik")
+
+#kus_vas={}
+
+#küsimused, vastused=loe_ankeet("Ankeet.txt")
+#print(küsimused)
+#print(vastused)
+#for i in range(len(küsimused)):
+#    print(f"{i+1}. Küsimus on: "+küsimused[i]+" vastus on: "+vastused[i])
