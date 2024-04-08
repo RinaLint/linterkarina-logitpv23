@@ -56,3 +56,4 @@ texbox.grid(row=0,column=0) #raami seed
 valik.grid(row=0,column=1) #raami seed
 nupp.grid(row=0,column=2) #raami seed
 aken.mainloop()
+
