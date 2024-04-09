@@ -1,4 +1,6 @@
 from tkinter import *
+from tkinter import messagebox as mb
+from tkinter import simpledialog as sd
 
 def tehtudvalik(var):
     f=var.get()
@@ -9,14 +11,22 @@ def tehtudvalik(var):
         texbox.configure(show="*")
         valik.configure(image=pilt2)
 def textpealkirjasse():
-    t=texbox.get()
-    pealkiri.configure(text=t)
-    texbox.delete(0,END)
+    vastus=mb.askquestion("Küsimus","Kas tõesti tahad info kopeerida?")
+    if vastus=="yes":
+        mb.showwarning("Tähelepanu", "Kohe teisaldatakse info!")
+        t=texbox.get()
+        pealkiri.configure(text=t)
+        texbox.delete(0,END)
+    else:
+        mb.showinfo("Valik oli tehtud", "Info jääb omal kohal")
+        nimi=sd.askstring("Saame tuttuvaks!", "Mis on sinu nimi?") #askinteger() #askfloat()
+        pealkiri.configure(text=nimi)
 aken=Tk()
 aken.geometry("500x500")
 aken.title("Akna pealkiri")
 aken.configure(bg="#3deff5")
 aken.iconbitmap("icon.ico")
+
 pealkiri=Label(aken,
                text="Põhielemendid",
                bg="#df7ef7",
@@ -33,7 +43,7 @@ texbox=Entry(raam,
               width=16,
               show="*")
 pilt1=PhotoImage(file="eye.png")
-pilt2=PhotoImage(file="eye.png")
+pilt2=PhotoImage(file="show.png")
 var=BooleanVar() #IntVar(), StringVar()
 valik=Checkbutton(raam,
                   image=pilt2, #text="Punkt1"
@@ -56,4 +66,3 @@ texbox.grid(row=0,column=0) #raami seed
 valik.grid(row=0,column=1) #raami seed
 nupp.grid(row=0,column=2) #raami seed
 aken.mainloop()
-
