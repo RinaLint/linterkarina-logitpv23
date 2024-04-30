@@ -1,13 +1,14 @@
 import tkinter as tk
 import random
+from tkinter import simpledialog
 
 def laadi_sõnad(sõnad):
     with open(sõnad, 'r', encoding='utf-8') as fail:
-        sõnad = [rivi.strip().upper() for rivi in fail if len(rivi.strip()) == 5]
+        sõnad=[rivi.strip().upper() for rivi in fail if len(rivi.strip()) == 5]
     return sõnad
 
 def kontrolli_sõna(arvamine, sõna):
-    tulemus = []
+    tulemus=[]
     for i, täht in enumerate(arvamine):
         if täht == sõna[i]:
             tulemus.append('green')
@@ -56,6 +57,26 @@ def algus_uuesti():
             sisestus.config(state='normal')
             sisestus.delete(0, 'end')
 
+def lisa_sõna():
+    uus_sõna = simpledialog.askstring("Lisa sõna", "Sisestage sõna, mida soovite lisada:")
+    if uus_sõna:
+        uus_sõna = uus_sõna.upper()
+        sõnad.append(uus_sõna)
+        with open('Sõnad.txt', 'a', encoding='utf-8') as fail:
+            fail.write(uus_sõna + '\n')
+
+def eemalda_sõna():
+    sõna_kustutada = simpledialog.askstring("Eemalda sõna", "Sisestage sõna, mida soovite eemaldada:")
+    if sõna_kustutada:
+        sõna_kustutada = sõna_kustutada.upper()
+        if sõna_kustutada in sõnad:
+            sõnad.remove(sõna_kustutada)
+            with open('Sõnad.txt', 'w', encoding='utf-8') as fail:
+                for sõna in sõnad:
+                    fail.write(sõna + '\n')
+        else:
+            tulemus_silt.config(text="Seda sõna pole loendis!")
+
 # Initsialiseerimine
 sõnad = laadi_sõnad('Sõnad.txt')
 hetke_sõna = random.choice(sõnad)
@@ -92,5 +113,13 @@ tulemus_silt.grid(row=9, column=0, columnspan=5, pady=15, sticky='w')  # Изм�
 # Кнопка для сброса игры
 algus_uuesti_nupp = tk.Button(põhiraam, text="Alusta uuesti", command=algus_uuesti, bg='lightblue', fg='black')
 algus_uuesti_nupp.grid(row=10, column=0, columnspan=5, pady=15, sticky='w')  # Изменено расположение кнопки на левый край
+
+# Кнопка для добавления слова
+lisa_sõna_nupp = tk.Button(põhiraam, text="Lisa sõna", command=lisa_sõna, bg='lightblue', fg='black')
+lisa_sõna_nupp.grid(row=11, column=0, columnspan=2, pady=15, padx=5, sticky='w')  
+
+# Кнопка для удаления слова
+eemalda_sõna_nupp = tk.Button(põhiraam, text="Eemalda sõna", command=eemalda_sõna, bg='lightblue', fg='black')
+eemalda_sõna_nupp.grid(row=11, column=2, columnspan=2, pady=15, padx=5, sticky='w')  
 
 aken.mainloop()

@@ -1,5 +1,8 @@
-Eesti
-Päike
-Tartu
-Pärnu
+EESTI
+TARTU
+PÄRNU
 AHHAA
+PÄIKE
+PALUN
+AITÄH
+ÖELDA
