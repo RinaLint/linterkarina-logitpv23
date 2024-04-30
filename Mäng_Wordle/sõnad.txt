@@ -1,8 +1,8 @@
-EESTI
-TARTU
-PÄRNU
-AHHAA
-PÄIKE
-PALUN
-AITÄH
-ÖELDA
+Eesti
+Tütar
+Päike
+Ilves
+Kaste
+Algus
+Märts
+

@@ -24,7 +24,7 @@
     <Compile Include="Mäng_Wordle.py" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="sõnad.txt" />
+    <Content Include="wordle.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
