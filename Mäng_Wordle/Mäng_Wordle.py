@@ -95,7 +95,7 @@ arvamine_muutuja = tk.StringVar()
 arvamine_sisestus = tk.Entry(põhiraam, textvariable=arvamine_muutuja, font=('Arial', 36), width=8, bg='lightblue', fg='black')
 arvamine_sisestus.grid(row=7, column=0, columnspan=5, pady=15, sticky='w')  # Изменено расположение поля ввода на левый край
 
-saatmis_nupp = tk.Button(põhiraam, text="Saada", font=("Arial", 36) command=saatmine, bg='lightblue', fg='black', width=20, height=3)
+saatmis_nupp = tk.Button(põhiraam, text="Saada", command=saatmine bg='lightblue', fg='black', width=20, height=3)
 saatmis_nupp.grid(row=8, column=0, columnspan=5, pady=15, sticky='w')
 
 tulemus_silt = tk.Label(põhiraam, text="", font=('Arial', 36), bg='lightblue', fg='white')
