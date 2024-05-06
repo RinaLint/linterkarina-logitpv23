@@ -24,6 +24,7 @@
     <Compile Include="Mäng_Wordle.py" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Tallinna Tööstushariduskeskus.docx" />
     <Content Include="wordle.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
