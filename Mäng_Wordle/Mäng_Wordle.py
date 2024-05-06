@@ -77,7 +77,7 @@ hetke_üritus = 0
 
 aken = tk.Tk()
 aken.title("Sõnapilt")
-aken.geometry("800x800")
+aken.geometry("900x900")
 aken.config(bg='lightblue')
 
 # Создание рамки для выравнивания содержимого по левому краю
@@ -88,28 +88,26 @@ põhiraam.pack(expand=True)
 sisestused = [[tk.Entry(põhiraam, font=('Arial', 36), width=2, bg='lightblue', fg='black') for _ in range(5)] for _ in range(6)]
 for i, rida in enumerate(sisestused):
     for j, sisestus in enumerate(rida):
-        sisestus.grid(row=i, column=j, padx=5, pady=5, sticky='w')  # Изменено расположение ячеек на левый край
+        sisestus.grid(row=i, column=j, padx=5, pady=5, sticky='w')  #Изменено расположение ячеек на левый край
 
-# Поле ввода для предполагаемого слова
-arvamine_muutuja = tk.StringVar()
-arvamine_sisestus = tk.Entry(põhiraam, textvariable=arvamine_muutuja, font=('Arial', 36), width=8, bg='lightblue', fg='black')
-arvamine_sisestus.grid(row=7, column=0, columnspan=5, pady=15, sticky='w')  # Изменено расположение поля ввода на левый край
+#Поле ввода для предполагаемого слова
+arvamine_muutuja=tk.StringVar()
+arvamine_sisestus=tk.Entry(põhiraam, textvariable=arvamine_muutuja, font=('Arial', 36), width=8, bg='lightblue', fg='black')
+arvamine_sisestus.grid(row=7, column=0, columnspan=5, pady=15, sticky='w')  #Изменено расположение поля ввода на левый край
 
-saatmis_nupp = tk.Button(põhiraam, text="Saada", command=saatmine bg='lightblue', fg='black', width=20, height=3)
+saatmis_nupp=tk.Button(põhiraam, text="Saada", command=saatmine, bg='lightblue', fg='black', width=20, height=3)
 saatmis_nupp.grid(row=8, column=0, columnspan=5, pady=15, sticky='w')
 
-tulemus_silt = tk.Label(põhiraam, text="", font=('Arial', 36), bg='lightblue', fg='white')
+tulemus_silt=tk.Label(põhiraam, text="", font=('Arial', 36), bg='lightblue', fg='white')
 tulemus_silt.grid(row=9, column=0, columnspan=5, pady=15, sticky='w')
 
-algus_uuesti_nupp = tk.Button(põhiraam, text="Alusta uuesti", command=algus_uuesti, bg='lightblue', fg='black', width=20, height=3)
+algus_uuesti_nupp=tk.Button(põhiraam, text="Alusta uuesti", command=algus_uuesti, bg='lightblue', fg='black', width=20, height=3)
 algus_uuesti_nupp.grid(row=10, column=0, columnspan=5, pady=15, sticky='w')
 
-lisa_sõna_nupp = tk.Button(põhiraam, text="Lisa sõna", command=lisa_sõna, bg='lightblue', fg='black', width=20, height=3)
+lisa_sõna_nupp=tk.Button(põhiraam, text="Lisa sõna", command=lisa_sõna, bg='lightblue', fg='black', width=20, height=3)
 lisa_sõna_nupp.grid(row=11, column=0, columnspan=2, pady=15, padx=5, sticky='w')
 
-eemalda_sõna_nupp = tk.Button(põhiraam, text="Eemalda sõna", command=eemalda_sõna, bg='lightblue', fg='black', width=20, height=3)
+eemalda_sõna_nupp=tk.Button(põhiraam, text="Eemalda sõna", command=eemalda_sõna, bg='lightblue', fg='black', width=20, height=3)
 eemalda_sõna_nupp.grid(row=11, column=2, columnspan=2, pady=15, padx=15, sticky='w')
 
 aken.mainloop()
-
- 
