@@ -32,10 +32,10 @@ def saatmine():
         tulemus_silt.config(text="Sõna peab olema 5 tähemärki pikk!")
         return
 
-    tulemus = kontrolli_sõna(arvamine, hetke_sõna)
+    tulemus=kontrolli_sõna(arvamine, hetke_sõna)
     uuenda_liidest(arvamine, tulemus)
 
-    if arvamine == hetke_sõna or hetke_üritus == 5:
+    if arvamine==hetke_sõna or hetke_üritus==5:
         tulemus_silt.config(text=f"Sõna: {hetke_sõna}")
         for sisestusrida in sisestused:
             for sisestus in sisestusrida:
@@ -47,8 +47,8 @@ def saatmine():
 
 def algus_uuesti():
     global hetke_sõna, hetke_üritus
-    hetke_sõna = random.choice(sõnad)
-    hetke_üritus = 0
+    hetke_sõna=random.choice(sõnad)
+    hetke_üritus=0
     arvamine_muutuja.set("")
     tulemus_silt.config(text="")
 
@@ -58,12 +58,12 @@ def algus_uuesti():
             sisestus.delete(0, 'end')
 
 def lisa_sõna():
-    uus_sõna = simpledialog.askstring("Lisa sõna", "Sisestage sõna, mida soovite lisada:")
+    uus_sõna=simpledialog.askstring("Lisa sõna", "Sisestage sõna, mida soovite lisada:")
     if uus_sõna:
         sõnad.append(uus_sõna.upper())
 
 def eemalda_sõna():
-    sõna_kustutada = simpledialog.askstring("Eemalda sõna", "Sisestage sõna, mida soovite eemaldada:")
+    sõna_kustutada=simpledialog.askstring("Eemalda sõna", "Sisestage sõna, mida soovite eemaldada:")
     if sõna_kustutada:
         if sõna_kustutada.upper() in sõnad:
             sõnad.remove(sõna_kustutada.upper())
@@ -71,9 +71,9 @@ def eemalda_sõna():
             tulemus_silt.config(text="Seda sõna pole loendis!")
 
 # Initsialiseerimine
-sõnad = laadi_sõnad('Sõnad.txt')
-hetke_sõna = random.choice(sõnad)
-hetke_üritus = 0
+sõnad=laadi_sõnad('Sõnad.txt')
+hetke_sõna=random.choice(sõnad)
+hetke_üritus=0
 
 aken = tk.Tk()
 aken.title("Sõnapilt")
@@ -99,7 +99,7 @@ saatmis_nupp=tk.Button(põhiraam, text="Saada", command=saatmine, bg='lightblue'
 saatmis_nupp.grid(row=8, column=0, columnspan=5, pady=15, sticky='w')
 
 tulemus_silt=tk.Label(põhiraam, text="", font=('Arial', 36), bg='lightblue', fg='white')
-tulemus_silt.grid(row=9, column=0, columnspan=5, pady=15, sticky='w')
+tulemus_silt.grid(row=8, column=0, columnspan=5, pady=15, sticky='w')
 
 algus_uuesti_nupp=tk.Button(põhiraam, text="Alusta uuesti", command=algus_uuesti, bg='lightblue', fg='black', width=20, height=3)
 algus_uuesti_nupp.grid(row=10, column=0, columnspan=5, pady=15, sticky='w')
