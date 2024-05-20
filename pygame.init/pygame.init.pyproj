@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>517acfc3-5008-49a1-865a-0d3d40fab7f6</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>lummememm.py</StartupFile>
+    <StartupFile>Maja.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -22,10 +22,14 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="lummememm.py" />
+    <Compile Include="Maja.py" />
+    <Compile Include="Ruudud.py" />
+    <Compile Include="YouWin.py" />
     <Compile Include="pygame.init.py" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="sipsik.xcf" />
+    <Content Include="win.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
