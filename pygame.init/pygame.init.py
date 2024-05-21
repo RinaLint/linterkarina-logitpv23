@@ -1,10 +1,10 @@
 import pygame
-pygame.init() #Pygame¥i tˆˆle rakendamiseks
-ekraani_pind=pygame.display.set_mode((640,480)) #akna pind, 640 on akna laius, 480-kırgus
-ekraani_pind.fill((0,0,255)) #v‰rvime tekitatud pinna siniseks
+pygame.init() #Pygame¬¥i t√∂√∂le rakendamiseks
+ekraani_pind=pygame.display.set_mode((640,480)) #akna pind, 640 on akna laius, 480-k√µrgus
+ekraani_pind.fill((0,0,255)) #v√§rvime tekitatud pinna siniseks
 pygame.display.set_caption("Minu esimine aken")
 
-ristkylik1=pygame.Rect(0,380,640,480) #Argumentid: x koordinat, y koordinat, laius, kırgus.
+ristkylik1=pygame.Rect(0,380,640,480) #Argumentid: x koordinat, y koordinat, laius, k√µrgus.
 pygame.draw.rect(ekraani_pind,(0,255,0),ristkylik1) #surface, color, Rect
 
 center_cordinates=(60,60)
@@ -20,17 +20,17 @@ meie_font=pygame.font.SysFont("Verdana",36)
 teksti_pilt=meie_font.render(tekst, False, (250,250,100))
 ekraani_pind.blit(teksti_pilt,(300,30))
 
-pygame.display.flip() #soovime pilt kasutajale n‰idata
+pygame.display.flip() #soovime pilt kasutajale n√§idata
 while True:
-    event=pygame.event.poll() #lıpmatu ts¸kel, mis igas sammus loeb kasutajalt sisendeid muutujasse event ning kontollib seej‰rel, kas kasutaja soovib programmi sulgeda
+    event=pygame.event.poll() #l√µpmatu ts√ºkel, mis igas sammus loeb kasutajalt sisendeid muutujasse event ning kontollib seej√§rel, kas kasutaja soovib programmi sulgeda
     if event.type==pygame.QUIT:
         break
-pygame.quit() #Pygame v‰lja l¸litamine
+pygame.quit() #Pygame v√§lja l√ºlitamine
 
 
-#joon (line): pygame.draw.line(aken, v‰rv, algus_pos, lıpp_pos, paksus)
-#ristk¸lik (rect): pygame.draw.rect(screen, v‰rv, [x, y, w, h], joone_paksus)
+#joon (line): pygame.draw.line(aken, v√§rv, algus_pos, l√µpp_pos, paksus)
+#ristk√ºlik (rect): pygame.draw.rect(screen, v√§rv, [x, y, w, h], joone_paksus)
 
-#hulknurk (polygon): pygame.draw.polygon(screen, v‰rv, koordinaatide_loend, joone_paksus)
-#ovaal (ellipse): pygame.draw.ellipse(screen, v‰rv, [x, y, r1, r2], joone_paksus)
-#kaar (arc): pygame.draw.arc(screen, v‰rv, ristk¸liku_koordinaadid, start_nurk, lıpp_nurk, joone_paksus)
+#hulknurk (polygon): pygame.draw.polygon(screen, v√§rv, koordinaatide_loend, joone_paksus)
+#ovaal (ellipse): pygame.draw.ellipse(screen, v√§rv, [x, y, r1, r2], joone_paksus)
+#kaar (arc): pygame.draw.arc(screen, v√§rv, ristk√ºliku_koordinaadid, start_nurk, l√µpp_nurk, joone_paksus)

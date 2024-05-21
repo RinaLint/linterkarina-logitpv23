@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>517acfc3-5008-49a1-865a-0d3d40fab7f6</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Maja.py</StartupFile>
+    <StartupFile>pica4u.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -23,11 +23,22 @@
   <ItemGroup>
     <Compile Include="lummememm.py" />
     <Compile Include="Maja.py" />
+    <Compile Include="heli.py" />
+    <Compile Include="pica4u.py" />
+    <Compile Include="rect.py" />
+    <Compile Include="surface.py" />
+    <Compile Include="ruutude_vihm.py" />
+    <Compile Include="pall.py" />
+    <Compile Include="Pall2.py" />
     <Compile Include="Ruudud.py" />
     <Compile Include="YouWin.py" />
     <Compile Include="pygame.init.py" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Michael_Jackson.mp3" />
+    <Content Include="pall.xcf" />
+    <Content Include="Pikachu.webp" />
+    <Content Include="Poke_Ball.webp" />
     <Content Include="sipsik.xcf" />
     <Content Include="win.jpg" />
   </ItemGroup>
