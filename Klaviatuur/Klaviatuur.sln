@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33205.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Klaviatuur ja hiir", "Klaviatuur ja hiir.pyproj", "{EA6EDDE3-1225-44AB-B4B0-80E4F7A9AE7E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EA6EDDE3-1225-44AB-B4B0-80E4F7A9AE7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA6EDDE3-1225-44AB-B4B0-80E4F7A9AE7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C31527C8-E416-4F34-B103-6F32F3263828}
+	EndGlobalSection
+EndGlobal
