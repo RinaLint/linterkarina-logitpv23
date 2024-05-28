@@ -7,32 +7,35 @@ MAX_CIRCLES = 10
 INITIAL_RADIUS = 10
 GROWTH_RATE = 5
 
-screen=pygame.display.set_mode((WIDTH, HEIGHT))
+screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption('Click game')
 
 def get_random_color():
     return random.randint(0, 255), random.randint(0, 255), random.randint(0, 255)
 
+def main():
+    running = True
+    clock = pygame.time.Clock()
+    circles = []
 
-running=True
-clock=pygame.time.Clock()
-circles=[]
-
-while running:
-    for event in pygame.event.get():
-        if event.type==pygame.QUIT:
-            running=False
-        elif event.type == pygame.MOUSEBUTTONDOWN:
-            if len(circles) >= MAX_CIRCLES:
-                circles.pop(0)
+    while running:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                running = False
+            elif event.type == pygame.MOUSEBUTTONDOWN:
+                if len(circles) >= MAX_CIRCLES:
+                    circles.pop(0)
                 circles.append({'pos': event.pos, 'color': get_random_color(), 'radius': INITIAL_RADIUS})
-                
-                screen.fill(BACKGROUND_COLOR)
-                for circle in circles:
-                    circle['radius'] += GROWTH_RATE
-                    pygame.draw.circle(screen, circle['color'], circle['pos'], circle['radius'])
-                    
-                    pygame.display.flip()
-                    clock.tick(30)
-                    
-pygame.quit()
+
+        screen.fill(BACKGROUND_COLOR)
+        for circle in circles:
+            circle['radius'] += GROWTH_RATE
+            pygame.draw.circle(screen, circle['color'], circle['pos'], circle['radius'])
+
+        pygame.display.flip()
+        clock.tick(30)
+
+    pygame.quit()
+
+if __name__ == '__main__':
+    main()
