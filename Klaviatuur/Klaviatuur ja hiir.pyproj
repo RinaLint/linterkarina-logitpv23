@@ -25,6 +25,7 @@
     <Compile Include="KEYDOWN.py" />
     <Compile Include="KEYUP.py" />
     <Compile Include="Hiire_klikkimine.py" />
+    <Compile Include="module1.py" />
     <Compile Include="oma_mäng2.py" />
     <Compile Include="oma_mäng.py" />
     <Compile Include="Mängupiiride_seadmine.py" />
