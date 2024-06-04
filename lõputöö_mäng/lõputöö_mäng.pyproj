@@ -30,6 +30,8 @@
     <Content Include="4.png" />
     <Content Include="5.png" />
     <Content Include="6.png" />
+    <Content Include="lose_sound.wav" />
+    <Content Include="win_sound.wav" />
     <Content Include="youlose.jpg" />
     <Content Include="youwin.jpg" />
   </ItemGroup>
