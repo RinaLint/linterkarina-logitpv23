@@ -4,7 +4,7 @@ import sys
 
 #инициализация Pygame и его музыкального модуля
 pygame.init()
-pygame.mixer.init()
+#pygame.mixer.init()
 
 #размеры окна игры и его заголовка
 WIDTH, HEIGHT = 800, 800
@@ -17,11 +17,11 @@ defeat_image = pygame.transform.scale(pygame.image.load("youlose.jpg"), (300, 30
 win_image = pygame.transform.scale(pygame.image.load("youwin.jpg"), (300, 300))
 
 #звук
-win_sound = pygame.mixer.Sound("win_sound.wav")
-lose_sound = pygame.mixer.Sound("lose_sound.wav")
+#win_sound = pygame.mixer.Sound("win_sound.wav")
+#lose_sound = pygame.mixer.Sound("lose_sound.wav")
 
 #слова и выбор
-words = ["elif", "if", "print", "for", "whiletrue", "init", "int"]
+words = ["elif", "if", "print", "for", "whiletrue", "init", "int", "import", "else", "delete", "pop", "remove"]
 word = random.choice(words).upper()
 guessed = []
 
@@ -60,7 +60,7 @@ def draw(word, guessed):
         pygame.display.update()
         pygame.time.delay(1000)
         win.blit(defeat_image, (250, HEIGHT - 400))
-        pygame.mixer.Sound.play(lose_sound)
+        #pygame.mixer.Sound.play(lose_sound)
         pygame.display.update()
         pygame.time.delay(2000)
         show_dialog("You lose! Do you want to continue?", ["Continue", "Close"])
@@ -69,7 +69,7 @@ def draw(word, guessed):
     #проверка, угаданы ли все буквы в слове
     if all(letter in guessed for letter in word):
         win.blit(win_image, (250, HEIGHT - 400))
-        pygame.mixer.Sound.play(win_sound)
+        #pygame.mixer.Sound.play(win_sound)
         pygame.display.update()
         pygame.time.delay(2000)
         show_dialog("Congratulations! You win!", ["Continue", "Close"])
